@@ -2,7 +2,7 @@
 
 #include <cassert>
 
-#include "./types.h"
+#include "./types.hpp"
 
 namespace pmath {
     union Vector2 {
@@ -30,7 +30,7 @@ namespace pmath {
             this->y = y;
         }
 
-        float operator [] (size_t i) {
+        float& operator [] (size_t i) {
             assert(i < 2 && i >= 0);
             return *((&x)+i);
         }

@@ -2,8 +2,8 @@
 
 #include <cassert>
 
-#include "./types.h"
-#include "./vector2.h"
+#include "./types.hpp"
+#include "./vector2.hpp"
 
 namespace pmath {
     struct Vector3 {
@@ -41,7 +41,7 @@ namespace pmath {
             this->z = value;
         }
 
-        float operator [] (size_t i) {
+        float& operator [] (size_t i) {
             assert(i < 3 && i >= 0);
             return *((&x)+i);
         }

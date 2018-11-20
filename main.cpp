@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cassert>
 
-#include "pmath/pmath.h"
+#include "pmath/pmath.hpp"
 
 using namespace pmath;
 
@@ -22,6 +22,9 @@ int main(int argc, char** argv) {
     Vector4 direction(1.0f, 2.0f, 3.0f, 4.0f);
     Vector3 p(position, 27.0f);
     std::cout << direction.x << "," << direction.y << std::endl;
+    for(int i = 0; i < 4; i++) {
+        direction[i] = i*2;
+    }
     for(int i = 0; i < 4; i++) {
         std::cout << direction[i] << std::endl;
     }
