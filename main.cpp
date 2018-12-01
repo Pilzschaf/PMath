@@ -18,18 +18,22 @@ void print(Vector4 v) {
 }
 
 int main(int argc, char** argv) {
-    pmath::Vector2 position(1.0f, 2.0f);
-    Vector4 direction(1.0f, 2.0f, 3.0f, 4.0f);
-    Vector3 p(position, 27.0f);
-    std::cout << direction.x << ',' << direction.y << '\n';
-    for(int i = 0; i < 4; i++) {
-        direction[i] = i*2;
-    }
-    for(int i = 0; i < 4; i++) {
-        std::cout << direction[i] << '\n';
-    }
-    std::cout << "Direction: ";
-    print(direction);
+    Vector2 start(4, -3);
+    Vector2 target(-3, 2);
+    Vector2 shotDirection = target - start;
+    print(shotDirection);
+
+    Vector3 d = -Vector3(27, -7, 3);
+    print(d);
+    Vector4 p(1, 2, 3, 4);
+    p += Vector4(2, 4, 6, 8);
+    print(p);
+
+    Vector2 position(-2, 3);
+    print(position);
+    Vector2 velocity(1, 4);
+    position = position + velocity;
+    print(position);
 
     return 0;
 }

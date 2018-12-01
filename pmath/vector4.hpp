@@ -59,5 +59,33 @@ namespace pmath {
             assert(i < 4 && i >= 0);
             return *((&x)+i);
         }
+
+        Vector4& operator += (const Vector4& other) {
+            this->x += other.x;
+            this->y += other.y;
+            this->z += other.z;
+            this->w += other.w;
+            return *this;
+        }
+
+        Vector4 operator + (const Vector4& other) const {
+            return Vector4(this->x + other.y, this->y + other.y, this->z + other.z, this->w + other.w);
+        }
+
+        Vector4& operator -= (const Vector4& other) {
+            this->x -= other.x;
+            this->y -= other.y;
+            this->z -= other.z;
+            this->w -= other.w;
+            return *this;
+        }
+
+        Vector4 operator - (const Vector4& other) const {
+            return Vector4(this->x - other.y, this->y - other.y, this->z - other.z, this->w - other.w);
+        }
+
+        Vector4 operator - () const {
+            return Vector4(-this->x, -this->y, -this->z, -this->w);
+        }
     };
 }
