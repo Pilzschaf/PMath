@@ -58,5 +58,47 @@ namespace pmath {
         Vector2 operator - () const {
             return Vector2(-this->x, -this->y);
         }
+
+        template<typename T>
+        Vector2 operator * (const T& scalar) const {
+            return Vector2(this->x * scalar, this->y * scalar);
+        }
+
+        template<typename T>
+        Vector2 operator *= (const T& scalar) {
+            this->x *= scalar;
+            this->y *= scalar;
+            return *this;
+        }
+
+        template<typename T>
+        Vector2 operator / (const T& scalar) const {
+            return Vector2(this->x / scalar, this->y / scalar);
+        }
+
+        template<typename T>
+        Vector2 operator /= (const T& scalar) {
+            this->x /= scalar;
+            this->y /= scalar;
+            return *this;
+        }
+
+        float sqrLength() const {
+            return this->x * this->x + this->y * this->y;
+        }
+
+        float length() const {
+            return sqrtf(sqrLength());
+        }
+
+        Vector2& normalize() {
+            float l = length();
+            if(l == 0) {
+                return *this;
+            }
+            *this /= l;
+            return *this;
+        }
+    
     };
 }
