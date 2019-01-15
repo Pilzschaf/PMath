@@ -71,5 +71,48 @@ namespace pmath {
         Vector3 operator - () const {
             return Vector3(-this->x, -this->y, -this->z);
         }
+
+        template<typename T>
+        Vector3 operator * (const T& scalar) const {
+            return Vector3(this->x * scalar, this->y * scalar, this->z * scalar);
+        }
+
+        template<typename T>
+        Vector3 operator *= (const T& scalar) {
+            this->x *= scalar;
+            this->y *= scalar;
+            this->z *= scalar;
+            return *this;
+        }
+
+        template<typename T>
+        Vector3 operator / (const T& scalar) const {
+            return Vector3(this->x / scalar, this->y / scalar, this->z / scalar);
+        }
+
+        template<typename T>
+        Vector3 operator /= (const T& scalar) {
+            this->x /= scalar;
+            this->y /= scalar;
+            this->z /= scalar;
+            return *this;
+        }
+
+        float length() const {
+            return sqrtf(sqrLength());
+        }
+
+        float sqrLength() const {
+            return this->x * this->x + this->y * this->y + this->z * this->z;
+        }
+
+        Vector3& normalize() {
+            float l = length();
+            if(l == 0) {
+                return *this;
+            }
+            *this /= l;
+            return *this;
+        }
     }; 
 }

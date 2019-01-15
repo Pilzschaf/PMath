@@ -2,6 +2,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
+#include <math.h>
 
 namespace pmath {
     typedef int8_t int8;

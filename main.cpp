@@ -18,22 +18,18 @@ void print(Vector4 v) {
 }
 
 int main(int argc, char** argv) {
-    Vector2 start(4, -3);
-    Vector2 target(-3, 2);
-    Vector2 shotDirection = target - start;
-    print(shotDirection);
-
-    Vector3 d = -Vector3(27, -7, 3);
-    print(d);
-    Vector4 p(1, 2, 3, 4);
-    p += Vector4(2, 4, 6, 8);
-    print(p);
-
     Vector2 position(-2, 3);
+    position *= 2;
     print(position);
-    Vector2 velocity(1, 4);
-    position = position + velocity;
+    position.normalize();
     print(position);
+    Vector4 v(1.0f, 2.0f, 3.0f, 4.0f);
+    print(v);
+    v /= 2.7f;
+    print(v);
+    std::cout << v.length() << " " << v.sqrLength() << std::endl;
+    v.normalize();
+    std::cout << v.length() << " " << v.sqrLength() << std::endl;
 
     return 0;
 }
