@@ -114,5 +114,13 @@ namespace pmath {
             *this /= l;
             return *this;
         }
+
+        Vector3 normalized() {
+            return Vector3(this->x, this->y, this->z).normalize();
+        }
+
+        float dot(Vector3& other) {
+            return this->x * other.x + this->y * other.y + this->z * other.z;
+        }
     }; 
 }
