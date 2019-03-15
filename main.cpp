@@ -18,18 +18,14 @@ void print(Vector4 v) {
 }
 
 int main(int argc, char** argv) {
-    Vector2 position(-2, 3);
-    position *= 2;
-    print(position);
-    position.normalize();
-    print(position);
-    Vector4 v(1.0f, 2.0f, 3.0f, 4.0f);
-    print(v);
-    v /= 2.7f;
-    print(v);
-    std::cout << v.length() << " " << v.sqrLength() << std::endl;
-    v.normalize();
-    std::cout << v.length() << " " << v.sqrLength() << std::endl;
+    Vector2 a(2, 4);
+    Vector2 b(3, 1);
+    std::cout << "a dot b: " << a.dot(b) << std::endl;
+    std::cout << "b dot a: " << b.dot(a) << std::endl;
+    float result = a.dot(b);
+    result /= a.length();
+    result /= b.length();
+    std::cout << "cos(angle): " << result;
 
     return 0;
 }

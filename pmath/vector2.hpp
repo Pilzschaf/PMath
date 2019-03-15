@@ -100,5 +100,12 @@ namespace pmath {
             return *this;
         }
     
+        Vector2 normalized() {
+            return Vector2(this->x, this->y).normalize();
+        }
+
+        float dot(Vector2& other) {
+            return this->x * other.x + this->y * other.y;
+        }
     };
 }
